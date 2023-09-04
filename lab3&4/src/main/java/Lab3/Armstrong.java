@@ -10,6 +10,7 @@ package Lab3;
  */
 import java.util.*;
 import java.lang.Math;
+
 public class Armstrong {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -21,11 +22,11 @@ public class Armstrong {
         while (num > 0) {
             lastD = num % 10;
             num /= 10;
-            sum += Math.pow(lastD, 3); 
+            sum += Math.pow(lastD, 3);
         }
         if (sum == ognum)
             System.out.println("Armstrong number");
         else
             System.out.println("Not Armstrong number");
-}
+    }
 }
