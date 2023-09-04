@@ -39,22 +39,26 @@ class Number {
 
     boolean isArmstrong() {
         int sum = 0;
-        int n = num;
+        int n;
+        n = (int)num;
 
         while (n > 0) {
             int rem = n % 10;
-            sum += pow(rem, 3);
+            sum += Math.pow(rem, 3);
             n /= 10;
         }
 
         if (sum == num)
             return true;
+
         return false;
     }
 }
 
 public class Q5 {
     public static void main(String[] args) {
-
+        Number obj = new Number(5);
+        System.out.println(obj.isPositive());
+        System.out.println(obj.isNegative());
     }
 }
