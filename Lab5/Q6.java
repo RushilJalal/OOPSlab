@@ -1,49 +1,59 @@
-import java.util.*;
+import java.util.Scanner;
 
 class Book {
-    String title, author;
-    int edition;
+    private String title;
+    private String author;
+    private int edition;
 
-    Book(String t, String auth, int ed)
-    {
-        title = t;
-        author = auth;
-        edition = ed;
+    public Book(String title, String author, int edition) {
+        this.title = title;
+        this.author = author;
+        this.edition = edition;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getEdition() {
+        return edition;
+    }
 }
 
-class Q6 {
+public class Q6 {
     public static void main(String[] args) {
-        String name;
-        Scanner sc = new Scanner(System.in);
-        Book books[] = new Book[6];
-        for (int i = 0; i < 6; i++)
-        {
-            System.out.printf("Enter book %d title: ", i);
-            String t = sc.next();
-            System.out.printf("Enter book %d author: ", i);
-            String a = sc.next();
-            System.out.printf("Enter book %d edition: \n", i);
-            int e = sc.nextInt();
+        // Create an array of 6 Book objects in ascending order
+        Book[] books = new Book[6];
+        books[0] = new Book("Book1", "Author1", 1);
+        books[1] = new Book("Book2", "Author1", 2);
+        books[2] = new Book("Book3", "Author2", 1);
+        books[3] = new Book("Book4", "Author3", 1);
+        books[4] = new Book("Book5", "Author4", 1);
+        books[5] = new Book("Book6", "Author5", 1);
 
-            books[i] = new Book(t, a, e);
-        }
+        // Get user input for the author's name
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the author's name: ");
+        String inputAuthor = scanner.nextLine();
 
-        System.out.println("Enter author name: ");
-        name = sc.next();
-
+        // Display books by the input author
         boolean found = false;
-        for(int i = 0; i< 6; i++)
-        {
-            if(name.equals(books[i].author))
-            {
+        System.out.println("Books by " + inputAuthor + ":");
+        for (Book book : books) {
+            if (book.getAuthor().equalsIgnoreCase(inputAuthor)) {
+                System.out.println("Title: " + book.getTitle() + ", Edition: " + book.getEdition());
                 found = true;
-                System.out.println("i: "+i);
-                System.out.println("Book title: "+books[i].title);
-                System.out.println("Book edition: "+ books[i].edition);
             }
         }
 
+        if (!found) {
+            System.out.println("No books found by " + inputAuthor + ".");
+        }
+
+        scanner.close();
     }
 }
