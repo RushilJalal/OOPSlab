@@ -99,7 +99,7 @@ class SavingsAccount extends Account {
 class Q1 {
     public static void main(String[] args) {
         CurrentAccount acc1 = new CurrentAccount("Rushil", 22020202, 10000);
-        // acc1.withdraw(1000);
+        acc1.withdraw(1000);
         SavingsAccount acc2 = new SavingsAccount("arhaan", 2232323, 9000);
         acc2.display();
         acc2.deposit(5000);
