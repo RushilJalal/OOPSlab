@@ -16,7 +16,7 @@ class Account {
 
     void deposit(double dep) {
         balance += dep;
-        System.out.printf("Deposit of %d successful!", dep);
+        System.out.printf("Deposit of %.2f successful!\n", dep);
         display();
     }
 
@@ -26,18 +26,18 @@ class Account {
             balance -= amount;
         } else
             System.out.println("Sorry. Not enough balance.");
+        display();
     }
 }
 
-class currentAccount extends Account {
+class CurrentAccount extends Account {
 
-    currentAccount(String name, int acc, String type, double bal) {
+    CurrentAccount(String name, int acc, double bal) {
         super(name, acc, "current account", bal);
     }
 
     void deposit(double dep) {
         super.deposit(dep);
-        System.out.printf("Deposit of %d successful!", dep);
         display();
     }
 
@@ -52,28 +52,25 @@ class currentAccount extends Account {
     void display() {
         super.display();
     }
-
 }
 
 class SavingsAccount extends Account {
-    double minBal;
-    double serviceTaxRate;
     double interest = 0.07;
+    double minBal = 10000;
+    double serviceTaxRate = 0.05;
 
-    SavingsAccount(String name, int acc, String type, double bal, double minBal, double serviceTaxRate) {
+    SavingsAccount(String name, int acc, double bal) {
         super(name, acc, "savings account", bal);
-        this.minBal = minBal;
-        this.serviceTaxRate = serviceTaxRate;
     }
 
     void interest() {
-        balance += interest * balance;
+        double interestAmount = interest * balance;
+        System.out.printf("Interest on %.2f is %.2f\n", balance, interestAmount);
+        balance += interestAmount;
     }
 
     void deposit(double dep) {
-        balance += dep;
-        System.out.printf("Deposit of %d successful!", dep);
-        display();
+        super.deposit(dep);
     }
 
     void withdraw(double amount) {
@@ -94,7 +91,6 @@ class SavingsAccount extends Account {
     }
 
     void display() {
-        interest();
         super.display();
     }
 
@@ -102,7 +98,11 @@ class SavingsAccount extends Account {
 
 class Q1 {
     public static void main(String[] args) {
-        currentAccount acc1 = new currentAccount("Rushil", 22020202, "current account", 9000);
-        acc1.withdraw(1000);
+        CurrentAccount acc1 = new CurrentAccount("Rushil", 22020202, 10000);
+        // acc1.withdraw(1000);
+        SavingsAccount acc2 = new SavingsAccount("arhaan", 2232323, 9000);
+        acc2.display();
+        acc2.deposit(5000);
+        acc2.withdraw(15000);
     }
 }
