@@ -1,0 +1,1 @@
+super.getRateOfInterest(rate);
