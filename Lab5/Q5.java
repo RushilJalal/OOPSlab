@@ -27,20 +27,17 @@ class Number {
     }
 
     boolean isPrime() {
-        boolean check = true;
         for (int i = 2; i < num; i++) {
             if (num % i == 0) {
-                check = false;
-                break;
+                return false;
             }
         }
-        return check ? true : false;
+        return true;
     }
 
     boolean isArmstrong() {
         int sum = 0;
-        int n;
-        n = (int)num;
+        int n = (int) num;
 
         while (n > 0) {
             int rem = n % 10;

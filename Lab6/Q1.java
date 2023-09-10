@@ -1,51 +1,93 @@
-class Account
-{
+class Account {
     String name, type;
-    int accNo, balance;
-    float interest;
+    int accNo;
+    double balance;
 
-    Account(String name, int acc, String type, int bal)
-    {
+    Account(String name, int acc, String type, double bal) {
         this.name = name;
         accNo = acc;
         this.type = type;
         balance = bal;
     }
-    void calculate()
-    {    
-        balance += balance*interest; 
+
+    void display() {
+        System.out.println("Account balance: " + balance);
     }
 
-    void display()
-    {
-        System.out.println("Current balance: "+ balance);
-    }
-
-    void deposit(int dep)
-    {
+    void deposit(double dep) {
         balance += dep;
-        System.out.printf("Deposit of %d successful!",dep);
+        System.out.printf("Deposit of %d successful!", dep);
         display();
     }
 
-
-    
-} 
-
-class currentAccount extends Account
-{
-    int minBal = 10000;
-    float serviceTax = 0.01;
-    if (balance < minBal)
-    {
-        balance -= serviceTax*balance; 
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            System.out.println("You withdrew " + amount);
+            balance -= amount;
+        } else
+            System.out.println("Sorry. Not enough balance.");
     }
-    interest = 0;
 }
 
-class Q1
-{
+class currentAccount extends Account {
+
+    currentAccount(String name, int acc, String type, double bal) {
+        super(name, acc, "current account", bal);
+    }
+
+    void deposit(double dep) {
+        super.deposit(dep);
+    }
+
+    void withdraw(double amount) {
+        super.withdraw(amount);
+    }
+
+    void display() {
+        super.display();
+    }
+
+}
+
+class SavingsAccount extends Account {
+    double minBal;
+    double serviceTaxRate;
+    double interest = 0.07;
+
+    SavingsAccount(String name, int acc, String type, double bal, double minBal, double serviceTax) {
+        super(name, acc, "Savings account", bal);
+        this.minBal = minBal;
+        this.serviceTax = serviceTax;
+    }
+
+    void interest() {
+        balance += interest * balance;
+    }
+
+    void withdraw() {
+        if (balance >= minBal)
+            super.withdraw(amount);
+        else {
+            System.out.println("Not enough balance");
+            serviceTax();
+        }
+    }
+
+    void serviceTax() {
+
+        double serviceTax = (minBal - balance) * serviceTaxRate;
+        System.out.println("Penalty of " + serviceTax);
+        balance -= serviceTax;
+    }
+
+    void display() {
+        super.display();
+    }
+
+}
+
+class Q1 {
     public static void main(String[] args) {
-        
+
     }
 }

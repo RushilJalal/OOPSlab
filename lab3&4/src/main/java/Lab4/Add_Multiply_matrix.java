@@ -59,7 +59,10 @@ public class Add_Multiply_matrix {
         int A[][] = new int[m][n];
         int P[][] = new int[m][q];
 
-        // check whether addition possible
+        readMatrix(arr1, m, n);
+        readMatrix(arr2, p, q);
+        addMatrices(A, arr1, arr2, m, n, p, q);
+        multiplyMatrices(P, arr1, arr2, m, n, p, q);
 
         System.out.println("Printing addition result: ");
         for (int i = 0; i < p; i++) {
@@ -68,8 +71,6 @@ public class Add_Multiply_matrix {
             }
             System.out.println("");
         }
-
-        // check whether multiplication possible
 
         System.out.println("Printing multiplication result: ");
         for (int i = 0; i < m; i++) {
