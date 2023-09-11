@@ -58,31 +58,29 @@ class PG extends Student {
 class Q2 {
     public static void main(String[] args) {
 
-        UG[] ugStudents = new UG[2];
-        PG[] pgStudents = new PG[2];
-
+        UG[] ugStudents = new UG[100];
+        PG[] pgStudents = new PG[100];
+        int ugCount = 0;
+        int pgCount = 0;
         // Create UG students and PG students
-        ugStudents[0] = new UG("John Doe", 101, 20, 2, 4500);
-        ugStudents[1] = new UG("Jane Smith", 102, 19, 1, 4000);
-        pgStudents[0] = new PG("Alice Johnson", 201, 24, 3, 6000);
-        pgStudents[1] = new PG("Bob Brown", 202, 25, 2, 5500);
-
-        int totalUGAdmissions = ugStudents.length;
-        int totalPGAdmissions = pgStudents.length;
+        ugStudents[ugCount++] = new UG("John Doe", 101, 20, 2, 4500);
+        ugStudents[ugCount++] = new UG("Jane Smith", 102, 19, 1, 4000);
+        pgStudents[pgCount++] = new PG("Alice Johnson", 201, 24, 3, 6000);
+        pgStudents[pgCount++] = new PG("Bob Brown", 202, 25, 2, 5500);
 
         System.out.println("UG Admissions:\n");
-        for (UG ugStudent : ugStudents) {
+        for (int i = 0; i < ugCount; i++) {
             ugStudent.display();
             System.out.println();
         }
 
         System.out.println("PG Admissions:\n");
-        for (PG pgStudent : pgStudents) {
+        for (int i = 0; i < pgCount; i++) {
             pgStudent.display();
             System.out.println();
         }
 
-        System.out.println("Total UG Admissions: " + totalUGAdmissions);
-        System.out.println("Total PG Admissions: " + totalPGAdmissions);
+        System.out.println("Total UG Admissions: " + ugCount);
+        System.out.println("Total PG Admissions: " + pgCount);
     }
 }
