@@ -75,13 +75,17 @@ class AXIS extends Bank {
 
 public class Q3 {
     public static void main(String[] args) {
-        Bank sbiBank = new SBI(10000);
-        Bank iciciBank = new ICICI(10000);
-        Bank axisBank = new AXIS(10000);
+        SBI s = new SBI(10000);
+        ICICI i = new ICICI(10000);
+        AXIS a = new AXIS(10000);
 
-        sbiBank.getRateOfInterest(7);
-        iciciBank.getRateOfInterest(8);
-        axisBank.getRateOfInterest(9);
+        Bank ref;
+        ref = s;
+        ref.getRateOfInterest(7);
+        ref = i;
+        ref.getRateOfInterest(8);
+        ref = a;
+        ref.getRateOfInterest(9);
         // Dynamic method dispatch
         System.out.println("SBI Bank Interest: " + sbiBank.calculate());
         System.out.println("ICICI Bank Interest: " + iciciBank.calculate());
