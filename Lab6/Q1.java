@@ -38,7 +38,6 @@ class CurrentAccount extends Account {
 
     void deposit(double dep) {
         super.deposit(dep);
-        display();
     }
 
     void withdraw(double amount) {
