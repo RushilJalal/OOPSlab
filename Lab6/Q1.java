@@ -42,14 +42,12 @@ class CurrentAccount extends Account {
     }
 
     void withdraw(double amount) {
-        if (amount <= balance)
-            super.withdraw(amount);
-        else
-            System.out.println("Not enough balance");
-        display();
+
+        super.withdraw(amount);
     }
 
     void display() {
+        System.out.println("Current Account");
         super.display();
     }
 }
@@ -74,12 +72,8 @@ class SavingsAccount extends Account {
     }
 
     void withdraw(double amount) {
-        if (balance >= minBal)
-            super.withdraw(amount);
-        else {
-            System.out.println("Not enough balance");
-            serviceTax();
-        }
+        super.withdraw(amount);
+
     }
 
     void serviceTax() {
@@ -91,6 +85,7 @@ class SavingsAccount extends Account {
     }
 
     void display() {
+        System.out.println("Savings Account");
         super.display();
     }
 
@@ -98,9 +93,9 @@ class SavingsAccount extends Account {
 
 class Q1 {
     public static void main(String[] args) {
-        CurrentAccount acc1 = new CurrentAccount("Rushil", 22020202, 10000);
+        CurrentAccount acc1 = new CurrentAccount("Rushil", 22020202, 15000);
         acc1.withdraw(1000);
-        SavingsAccount acc2 = new SavingsAccount("arhaan", 2232323, 9000);
+        SavingsAccount acc2 = new SavingsAccount("arhaan", 2232323, 10000);
         acc2.display();
         acc2.deposit(5000);
         acc2.withdraw(15000);
