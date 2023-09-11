@@ -87,8 +87,8 @@ public class Q3 {
         ref = a;
         ref.getRateOfInterest(9);
         // Dynamic method dispatch
-        System.out.println("SBI Bank Interest: " + sbiBank.calculate());
-        System.out.println("ICICI Bank Interest: " + iciciBank.calculate());
-        System.out.println("AXIS Bank Interest: " + axisBank.calculate());
+        System.out.println("SBI Bank Interest: " + s.calculate());
+        System.out.println("ICICI Bank Interest: " + i.calculate());
+        System.out.println("AXIS Bank Interest: " + a.calculate());
     }
 }
