@@ -50,7 +50,6 @@ class IMath
     static String decimalToHex(int num)
     {
         String str="";
-        int i = 0;
         String hex[] = {"A", "B", "C", "D", "E", "F"};
         while(num>0)
         {
