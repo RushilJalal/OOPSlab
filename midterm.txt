@@ -1,0 +1,2 @@
+convert int to hex
+sort string wordwise

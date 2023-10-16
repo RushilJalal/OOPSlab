@@ -8,7 +8,7 @@ class Q3
     byte b = 20;
     short s = 30;
     long l = 40;
-    float f = 50.0;
+    float f = 50.0f;
     double d = 60.0;
 
     //autoboxing

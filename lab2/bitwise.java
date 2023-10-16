@@ -8,5 +8,6 @@ class bitwise {
         num = sc.nextInt();
         System.out.println("Multiply by 2: " + (num << 1));
         System.out.println("Divide by 2: " + (num >> 1));
+        sc.close();
     }
 }
