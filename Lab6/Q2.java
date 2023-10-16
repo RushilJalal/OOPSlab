@@ -70,13 +70,13 @@ class Q2 {
 
         System.out.println("UG Admissions:\n");
         for (int i = 0; i < ugCount; i++) {
-            ugStudent.display();
+            ugStudents[i].display();
             System.out.println();
         }
 
         System.out.println("PG Admissions:\n");
         for (int i = 0; i < pgCount; i++) {
-            pgStudent.display();
+            pgStudents[i].display();
             System.out.println();
         }
 
