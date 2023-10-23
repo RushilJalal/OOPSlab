@@ -14,7 +14,7 @@ class Bank {
     }
 
     double calculate() {
-        interest = bal * (rate / 100.0); // Make sure to use 100.0 to get a double result
+        interest = bal * (rate / 100.0); // use 100.0 to get a double result
         return interest;
     }
 }
