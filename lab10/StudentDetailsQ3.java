@@ -16,7 +16,8 @@ public class StudentDetailsQ3 {
             int m1 = Integer.parseInt(mark1);
             int m2 = Integer.parseInt(mark2);
             int m3 = Integer.parseInt(mark3);
-            double percentage = (m1 + m2 + m3) / 300 * 100;
+            double percentage = (m1 + m2 + m3) / 300.0 * 100;
+            System.out.println("Percentage: "+percentage);
             if (percentage > 90)
                 grade = "A";
             else if (percentage > 80)
@@ -25,9 +26,11 @@ public class StudentDetailsQ3 {
                 grade = "C";
             else
                 grade = "D";
+            
+            System.out.println("Grade: "+grade);
 
         } catch (NumberFormatException e) {
-            System.out.println("Enter number instead of characters");
+            System.out.println("Character entered instead of numbers...");
         }
     }
 }
