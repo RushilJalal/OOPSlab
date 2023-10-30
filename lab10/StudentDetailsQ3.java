@@ -16,63 +16,7 @@ public class StudentDetailsQ3 {
             int m1 = Integer.parseInt(mark1);
             int m2 = Integer.parseInt(mark2);
             int
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             m3 = Integer.parseInt(mark3);
             double percentage = (m1 + m2 + m3) / 300 * 100;
             if (percentage > 90)
