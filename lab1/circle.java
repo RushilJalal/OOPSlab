@@ -8,6 +8,6 @@ System.out.println("Enter radius");
 r = sc.nextInt();
 area = 3.14 * r * r;
 cir = 2 * 3.14 * r;
-System.out.println("Circumference of circle is "+area);
+System.out.println("Circumference of circle is "+cir);
 System.out.println("Area of circle is "+area);
 }}
