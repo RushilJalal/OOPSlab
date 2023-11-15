@@ -28,27 +28,10 @@ public class Q1 extends Application {
         
         Label l1 = new Label("Welcome to JavaFX programming");
         l1.setTextFill(Color.MAGENTA);
-        
-        Label l2 = new Label("New label");
-        
-        
-        
-//        btn.setOnAction(new EventHandler<ActionEvent>() {
-//            
-//            @Override
-//            public void handle(ActionEvent event) {
-//                System.out.println("Hello World!");
-//            }
-//        });
-        
         FlowPane root = new FlowPane();
-//        StackPane root = new StackPane();
-        root.setHgap(100000);
+        root.setHgap(100);
         root.setVgap(100);
-//        root.getChildren().add(btn);
-        root.getChildren().add(l1);
-        root.getChildren().add(l2);
-        
+        root.getChildren().add(l1);        
         Scene scene = new Scene(root, 500, 200);
         
         primaryStage.setTitle("This is the first JavaFX Application");
