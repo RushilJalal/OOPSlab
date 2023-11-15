@@ -15,7 +15,7 @@ public class Q4 {
 
     public static void main(String[] args) {
         try {
-            validate(16);
+            validate(20);
         } catch (MyException e) {
             System.out.println("Exception caught...invalid age entered: " + e.getMessage());
         }
