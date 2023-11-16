@@ -1,5 +1,6 @@
 
-package javafxapplication1;
+package rushiljavafxapplication;
+
 import java.util.*;
 import java.awt.Color;
 import java.awt.Paint;
@@ -10,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -30,9 +32,8 @@ public class q3 extends Application {
         Label l1=new Label("User Name: ");
         TextField t1=new TextField();
         Label l2=new Label("Password: ");
-        TextField t2=new TextField();
+        PasswordField t2=new PasswordField();
         Label l3=new Label("");
-        //TextField t3=new TextField();
         
         Button b1 = new Button();
         b1.setText("Sign in");

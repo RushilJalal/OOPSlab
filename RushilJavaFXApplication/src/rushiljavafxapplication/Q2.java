@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
-package javafxapplication1;
+package rushiljavafxapplication;
+
 
 import java.util.*;
 import java.awt.Color;
@@ -24,7 +25,7 @@ import javafx.stage.Stage;
  *
  * @author student
  */
-public class q2 extends Application {
+public class Q2 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
@@ -49,12 +50,12 @@ public class q2 extends Application {
         });
 
         FlowPane root = new FlowPane();
-        root.setVgap(20.0);
-        root.setHgap(20.0);
+        root.setVgap(20);
+        root.setHgap(20);
         root.getChildren().addAll(h, b1, l2);
         // root.getChildren().add(l2);
 
-        Scene scene = new Scene(root, 500, 200);
+        Scene scene = new Scene(root, 400, 200);
 
         primaryStage.setTitle("This is the first JavaFX Application");
         primaryStage.setScene(scene);
