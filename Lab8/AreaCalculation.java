@@ -1,8 +1,8 @@
-interface Shape {
-    double calculateArea();
+abstract class Shape {
+    abstract double calculateArea();
 }
 
-class Rectangle implements Shape {
+class Rectangle extends Shape {
     private double length;
     private double width;
 
@@ -10,14 +10,12 @@ class Rectangle implements Shape {
         this.length = length;
         this.width = width;
     }
-
-    @Override
     public double calculateArea() {
         return length * width;
     }
 }
 
-class Circle implements Shape {
+class Circle extends Shape {
     private double radius;
 
     public Circle(double radius) {
